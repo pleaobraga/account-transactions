@@ -1,0 +1,26 @@
+@import '../../styles/colors';
+
+.balance {
+  display: flex;
+  flex-direction: column;
+  width: 60rem;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $grey;
+  padding: 5rem;
+  border-radius: 20px;
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 400;
+    text-align: center;
+    color: $secondary;
+  }
+
+  &__value {
+    font-size: 8rem;
+    font-weight: 600;
+    text-align: center;
+    color: $primary;
+  }
+}
