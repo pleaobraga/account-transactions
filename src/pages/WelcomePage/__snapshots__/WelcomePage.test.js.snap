@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`welcomePage render proprely 1`] = `
+<main
+  className="page page-welcome"
+>
+  <Card
+    text="This is a Rect Scaffold made by pleaobraga"
+    title="Welcome"
+  />
+</main>
+`;

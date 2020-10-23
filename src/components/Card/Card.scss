@@ -1,0 +1,19 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  align-items: center;
+  height: 20rem;
+  justify-content: space-around;
+
+  &__title {
+    font-size: 7rem;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 4rem;
+    color: #d65759;
+    text-align: center;
+  }
+}

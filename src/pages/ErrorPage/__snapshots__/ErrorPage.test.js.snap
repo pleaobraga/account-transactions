@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorPage render proprely 1`] = `
+<section
+  className="page page-error"
+>
+  <i
+    className="material-icons page-error__icon"
+  >
+    error_outline
+  </i>
+  <p
+    className="page-error__text"
+  >
+    This page could not be loaded
+  </p>
+</section>
+`;

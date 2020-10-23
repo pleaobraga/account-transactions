@@ -1,0 +1,15 @@
+.page {
+  &-error {
+    flex-direction: column;
+
+    &__icon {
+      font-size: 20rem;
+      color: red;
+    }
+
+    &__text {
+      font-size: 6rem;
+      margin-top: 3rem;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card render proprely 1`] = `
+<div
+  className="card"
+>
+  <h1
+    className="card__title"
+  >
+    Test
+  </h1>
+  <p
+    className="card__text"
+  >
+    test
+  </p>
+</div>
+`;
