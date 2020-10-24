@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Formik } from 'formik';
+import React from 'react'
+import { Formik } from 'formik'
 
 /**
  * Decorates a story with Formik
@@ -14,8 +14,7 @@ export const withFormValues = (initialValues = {}, validationSchema = {}) => (
   <Formik
     initialValues={initialValues}
     validationSchema={validationSchema}
-    onSubmit={values => console.log(values)}
-  >
-    {story()}
-  </Formik>
-);
+    onSubmit={(values) => console.log(values)}
+    render={(props) => story(props)}
+  />
+)
