@@ -5,11 +5,10 @@
   align-items: center;
   justify-content: space-around;
 
-  width: 7rem;
-
   &__icon {
     font-size: 2rem;
     color: $secondary;
+    margin-right: 0.5rem;
   }
 
   &__time {
