@@ -12,9 +12,7 @@ const Input = ({
   touched,
   ...otherProps
 }) => {
-  const hasError = () => {
-    has(errors, name) && has(touched, name)
-  }
+  const hasError = () => has(errors, name) && has(touched, name)
 
   const className = cx('input', {
     'input--error': hasError(),

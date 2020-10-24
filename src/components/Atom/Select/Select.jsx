@@ -13,9 +13,7 @@ const Select = ({
   children,
   ...otherProps
 }) => {
-  const hasError = () => {
-    has(errors, name) && has(touched, name)
-  }
+  const hasError = () => has(errors, name) && has(touched, name)
 
   const className = cx('select', {
     'select--error': hasError(),
