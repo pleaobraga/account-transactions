@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import './CalendarFormat.scss'
 
 const CalendarFormat = ({ date }) => {
-  console.log('date', date)
-
   return (
-    <p className="calendar">
+    <div className="calendar">
+      <div className="calendar__year-wrapper">
+        <span className="calendar__year">2020</span>
+      </div>
       <span className="calendar__day">12</span>
       <span className="calendar__month">may</span>
-    </p>
+    </div>
   )
 }
 
