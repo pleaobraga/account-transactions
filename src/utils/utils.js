@@ -7,7 +7,7 @@ export const simulateRequest = (data) => {
   return promise
 }
 
-export const formatPrice = (amount, currency = 'BRL', locale = 'de-DE') => {
+export const formatPrice = (amount, locale = 'de-DE', currency = 'BRL') => {
   return new Intl.NumberFormat(locale, {
     style: 'currency',
     currency: currency,
