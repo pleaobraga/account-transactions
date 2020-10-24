@@ -4,9 +4,20 @@ import { has, get } from 'lodash'
 import cx from 'classnames'
 import './Input.scss'
 
-const Input = ({ label, name, errors, handleChange, ...otherProps }) => {
+const Input = ({
+  label,
+  name,
+  errors,
+  handleChange,
+  touched,
+  ...otherProps
+}) => {
+  const hasError = () => {
+    has(errors, name) && has(touched, name)
+  }
+
   const className = cx('input', {
-    'input--error': has(errors, name),
+    'input--error': hasError(),
   })
 
   return (
@@ -18,9 +29,7 @@ const Input = ({ label, name, errors, handleChange, ...otherProps }) => {
         name={name}
         onChange={handleChange}
       />
-      {has(errors, name) && (
-        <p className="input__error-text">{get(errors, name)}</p>
-      )}
+      {hasError() && <p className="input__error-text">{get(errors, name)}</p>}
     </div>
   )
 }
@@ -31,6 +40,7 @@ Input.propTypes = {
   values: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
+  touched: PropTypes.object.isRequired,
 }
 
 export default Input
