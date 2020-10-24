@@ -1,9 +1,9 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import WelcomePage from './WelcomePage'
+import AccountPage from './AccountPage'
 
-export default storiesOf('Pages | WelcomePage', module).add(
+export default storiesOf('Pages | AccountPage', module).add(
   'default',
-  () => <WelcomePage />,
+  () => <AccountPage />,
   { info: { inline: true, header: false } }
 )
