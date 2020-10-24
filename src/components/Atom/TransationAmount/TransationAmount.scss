@@ -1,0 +1,14 @@
+@import '../../../styles/colors';
+
+.transition-amount {
+  font-size: 2rem;
+  font-weight: 700;
+
+  &--negative {
+    color: $red;
+  }
+
+  &--positive {
+    color: $green;
+  }
+}
