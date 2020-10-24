@@ -9,16 +9,16 @@
     "start": "webpack-dev-server --open --config ./config/webpack.dev.js",
     "build": "webpack --config ./config/webpack.prod.js",
     "test": "jest --config jest.config.json --no-cache --verbose",
-    "test:watch": "npm run test --  --watchAll",
-    "test:update": "npm run test -- -u",
-    "test:coverage": "npm run test -- --coverage --colors",
+    "test:watch": "yarn test --  --watchAll",
+    "test:update": "yarn test -- -u",
+    "test:coverage": "yarn test -- --coverage --colors",
     "lint": "esw . --ext .js,.jsx  --color ",
-    "lint:watch": "npm run lint -- --watch",
+    "lint:watch": "yarn lint -- --watch",
     "storybook": "start-storybook -p 9000 -c .storybook -s ./public "
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint && npm test"
+      "pre-push": "yarn lint && yarn test"
     }
   },
   "browserslist": [
