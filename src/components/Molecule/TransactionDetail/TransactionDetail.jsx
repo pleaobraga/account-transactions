@@ -1,30 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { CalendarFormat } from '../../Atom/CalendarFormat'
+import { HoursFormat } from '../../Atom/HoursFormat'
 import { TransationAmount } from '../../Atom/TransationAmount'
 import './TransactionDetail.scss'
 
-const TransactionDetail = () => {
+const TransactionDetail = ({ amount, date }) => {
   return (
     <div className="transaction-detail">
+      <div className="description">
+        <h3 className="description__title">Descrição do proj</h3>
+        <p className="description__value">
+          <TransationAmount amount={amount} />
+        </p>
+      </div>
       <div className="transaction-detail__date">
-        <CalendarFormat />
+        <HoursFormat date={date} />
+        <CalendarFormat date={date} />
       </div>
-      <div className="transaction-detail__description-wrapper">
-        <h3 className="transaction-detail__description-title">
-          Descrição do proj
-        </h3>
-        <span className="transaction-detail__description-date">data</span>
-      </div>
-      <p className="transaction-detail__value">
-        <TransationAmount amount={12} />
-      </p>
     </div>
   )
 }
 
 TransactionDetail.propTypes = {
-  amount: PropTypes.number,
+  amount: PropTypes.number.isRequired,
+  date: PropTypes.object.isRequired,
 }
 
 export default TransactionDetail

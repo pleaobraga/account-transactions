@@ -1,0 +1,19 @@
+@import '../../../styles/colors';
+
+.hours-format {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 7rem;
+
+  &__icon {
+    font-size: 2rem;
+    color: $secondary;
+  }
+
+  &__time {
+    font-size: 1.5rem;
+    color: $secondary;
+  }
+}

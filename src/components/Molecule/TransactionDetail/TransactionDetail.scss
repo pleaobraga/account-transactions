@@ -1,7 +1,9 @@
 @import '../../../styles/colors';
+@import '../../../styles/mixins';
 
 .transaction-detail {
   display: flex;
+  justify-content: space-between;
 
   width: 100%;
   padding: 1.5rem 0;
@@ -9,31 +11,35 @@
   border-left: 5px solid $green;
 
   background-color: $grey;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 3rem;
 
   &__date {
-    margin-right: 1.2rem;
+    display: flex;
+
+    margin-left: 3rem;
+
+    .hours-format {
+      margin-top: 10px;
+      margin-right: 3rem;
+
+      @include respond(phone) {
+        display: none;
+      }
+    }
   }
 
-  &__description {
-    &-wrapper {
-      display: flex;
-      flex-direction: column;
-    }
+  .description {
+    display: flex;
+    flex-direction: column;
 
-    &-title {
+    &__title {
       font-size: 2.5rem;
       color: $primary;
       word-break: break-all;
     }
 
-    &-date {
-      font-size: 2rem;
-      color: $secondary;
-      margin-top: 3px;
+    &__value {
+      margin-top: 1rem;
     }
-  }
-
-  &__value {
   }
 }
