@@ -37,18 +37,35 @@
       }
     }
 
+    &__actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
     &__button {
       margin-top: 1rem;
       background-color: $white;
-      color: $primary;
-      border: 3px solid $primary;
-      max-width: 300px;
-      margin: auto;
-      width: 100%;
 
-      &:hover {
-        background-color: $primary;
-        color: $white;
+      margin: auto;
+
+      &--submit {
+        color: $primary;
+        border: 2px solid $primary;
+
+        &:hover {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+
+      &--cancel {
+        color: $secondary;
+        border: 2px solid $secondary;
+
+        &:hover {
+          background-color: $secondary;
+          color: $white;
+        }
       }
     }
   }

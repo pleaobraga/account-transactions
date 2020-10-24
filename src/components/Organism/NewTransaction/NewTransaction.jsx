@@ -38,9 +38,20 @@ const NewTransaction = () => {
                   ))}
                 </Select>
               </div>
-              <Button type="submit" className="form__button">
-                Enviar Tranzação
-              </Button>
+              <div className="form__actions">
+                <Button
+                  type="submit"
+                  className="form__button form__button--submit"
+                >
+                  Enviar Tranzação
+                </Button>
+                <Button
+                  type="reset"
+                  className="form__button form__button--cancel"
+                >
+                  Cancelar
+                </Button>
+              </div>
             </form>
           )
         }}
