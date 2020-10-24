@@ -4,7 +4,7 @@ import CalendarFormat from './CalendarFormat'
 
 const now = new Date()
 
-export default storiesOf('Components | Atom/Calendar Format', module).add(
+export default storiesOf('Components | Molecule/Calendar Format', module).add(
   'default',
   () => <CalendarFormat date={now} />,
   {

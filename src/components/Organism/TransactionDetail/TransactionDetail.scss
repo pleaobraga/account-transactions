@@ -8,10 +8,16 @@
   width: 100%;
   padding: 1.5rem 0;
 
-  border-left: 5px solid $green;
-
   background-color: $grey;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 2rem;
+
+  &--positive {
+    border-left: 5px solid $green;
+  }
+
+  &--negative {
+    border-left: 5px solid $red;
+  }
 
   &__date {
     display: flex;
@@ -33,7 +39,7 @@
     flex-direction: column;
 
     &__title {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: $primary;
       word-break: break-all;
     }

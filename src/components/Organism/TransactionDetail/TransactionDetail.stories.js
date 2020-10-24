@@ -6,7 +6,7 @@ import TransactionDetail from './TransactionDetail'
 const now = new Date()
 
 export default storiesOf(
-  'Components | Molecule/Transaction detail',
+  'Components | Organism/Transaction Detail',
   module
 ).add(
   'default',
