@@ -1,0 +1,39 @@
+@import '../../../styles/colors';
+
+.transaction-detail {
+  display: flex;
+
+  width: 100%;
+  padding: 1.5rem 0;
+
+  border-left: 5px solid $green;
+
+  background-color: $grey;
+  padding: 1.5rem 1rem;
+
+  &__date {
+    margin-right: 1.2rem;
+  }
+
+  &__description {
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-title {
+      font-size: 2.5rem;
+      color: $primary;
+      word-break: break-all;
+    }
+
+    &-date {
+      font-size: 2rem;
+      color: $secondary;
+      margin-top: 3px;
+    }
+  }
+
+  &__value {
+  }
+}
