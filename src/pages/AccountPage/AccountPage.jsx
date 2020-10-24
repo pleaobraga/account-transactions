@@ -10,7 +10,7 @@ const transactions = [
   {
     id: 0,
     date: now,
-    amount: 32,
+    amount: 3200000000000000,
   },
   {
     id: 1,
@@ -22,7 +22,7 @@ const transactions = [
 const AccountPage = () => {
   return (
     <main className="page page-welcome">
-      <TotalBalance amount={5000} />
+      <TotalBalance amount={500} />
       <TransactionHistory transactions={transactions} />
     </main>
   )
