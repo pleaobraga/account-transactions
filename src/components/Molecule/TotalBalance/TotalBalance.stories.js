@@ -3,8 +3,10 @@ import { storiesOf } from '@storybook/react'
 import { number } from '@storybook/addon-knobs'
 import TotalBalance from './TotalBalance'
 
-export default storiesOf('Components | Card', module).add(
+export default storiesOf('Components | Molecule/Total Balance', module).add(
   'default',
   () => <TotalBalance amount={number('Amount', 32)} />,
-  { info: { inline: true, header: false } }
+  {
+    info: { inline: true, header: false },
+  }
 )
