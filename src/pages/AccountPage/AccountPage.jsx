@@ -1,6 +1,7 @@
 import React from 'react'
 import { TransactionHistory } from '../../components/Organism/TransactionHistory'
 import { TotalBalance } from '../../components/Molecule/TotalBalance'
+import { NewTransaction } from '../../components/Organism/NewTransaction'
 
 import './AccountPage.scss'
 
@@ -23,6 +24,7 @@ const AccountPage = () => {
   return (
     <main className="page page-welcome">
       <TotalBalance amount={500} />
+      <NewTransaction />
       <TransactionHistory transactions={transactions} />
     </main>
   )

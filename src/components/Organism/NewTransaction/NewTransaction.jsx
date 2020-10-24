@@ -21,22 +21,25 @@ const NewTransaction = () => {
         {(formikProps) => {
           return (
             <form onSubmit={formikProps.handleSubmit} className="form">
-              <Input
-                {...formikProps}
-                label="Descrição"
-                name="description"
-                maxlength="50"
-              />
-              <Select {...formikProps} label="Operação" name="operation">
-                {operations.map(({ label }, index) => (
-                  <option value={index} key="label">
-                    {label}
-                  </option>
-                ))}
-              </Select>
-              <Input {...formikProps} label="Valor" name="amount" />
+              <div className="form__fields">
+                <Input
+                  {...formikProps}
+                  label="Descrição"
+                  name="description"
+                  maxlength="50"
+                  className="input--description"
+                />
+                <Input {...formikProps} label="Valor" name="amount" />
+                <Select {...formikProps} label="Operação" name="operation">
+                  {operations.map(({ label }, index) => (
+                    <option value={index} key="label">
+                      {label}
+                    </option>
+                  ))}
+                </Select>
+              </div>
               <Button type="submit" className="form__button">
-                Enviar
+                Enviar Tranzação
               </Button>
             </form>
           )

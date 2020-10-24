@@ -15,11 +15,36 @@
   }
 
   .form {
+    display: flex;
+    flex-direction: column;
+
+    &__fields {
+      display: flex;
+      justify-content: space-between;
+
+      .select {
+        width: 100%;
+        max-width: 18%;
+      }
+
+      .input {
+        width: 100%;
+        max-width: 20%;
+
+        &.input--description {
+          max-width: 50%;
+        }
+      }
+    }
+
     &__button {
       margin-top: 1rem;
       background-color: $white;
       color: $primary;
-      border: 4px solid $primary;
+      border: 3px solid $primary;
+      max-width: 300px;
+      margin: auto;
+      width: 100%;
 
       &:hover {
         background-color: $primary;

@@ -32,7 +32,7 @@ const Select = ({
       >
         {value === -1 && (
           <option selected="selected" value={-1}>
-            Selecione uma opção
+            Selecione
           </option>
         )}
         {children}

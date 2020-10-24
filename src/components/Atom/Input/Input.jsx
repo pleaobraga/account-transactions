@@ -10,16 +10,17 @@ const Input = ({
   errors,
   handleChange,
   touched,
+  className,
   ...otherProps
 }) => {
   const hasError = () => has(errors, name) && has(touched, name)
 
-  const className = cx('input', {
+  const inputClasses = cx(`input ${className}`, {
     'input--error': hasError(),
   })
 
   return (
-    <div className={className}>
+    <div className={inputClasses}>
       {label && <label className="input__label">{label}</label>}
       <input
         {...otherProps}
@@ -39,6 +40,11 @@ Input.propTypes = {
   errors: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
   touched: PropTypes.object.isRequired,
+  className: PropTypes.string,
+}
+
+Input.defaultProps = {
+  className: '',
 }
 
 export default Input
