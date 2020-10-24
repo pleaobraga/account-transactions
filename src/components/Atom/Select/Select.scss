@@ -9,15 +9,15 @@
   margin-top: 0.5rem;
 
   &--error {
-    .input__field,
-    .input__field:focus {
+    .select__field,
+    .select__field:focus {
       border-color: $red;
       outline: none;
     }
 
-    .input__label,
-    .input__field,
-    .input__error-text {
+    .select__label,
+    .select__field,
+    .select__error-text {
       color: $red;
     }
   }

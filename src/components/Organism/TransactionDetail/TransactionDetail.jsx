@@ -15,7 +15,9 @@ const TransactionDetail = ({ amount, date }) => {
   return (
     <div className={className}>
       <div className="description">
-        <h3 className="description__title">Descrição do proj</h3>
+        <h3 className="description__title">
+          dadasdadsdasdasdasdasdasdasdasdadasdasdasdsadsadas
+        </h3>
         <p className="description__value">
           <TransationAmount amount={amount} />
         </p>

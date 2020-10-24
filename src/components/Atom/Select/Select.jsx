@@ -11,9 +11,11 @@ const Select = ({
   handleChange,
   touched,
   children,
+  values,
   ...otherProps
 }) => {
   const hasError = () => has(errors, name) && has(touched, name)
+  const value = get(values, name)
 
   const className = cx('select', {
     'select--error': hasError(),
@@ -28,6 +30,11 @@ const Select = ({
         name={name}
         onChange={handleChange}
       >
+        {value === -1 && (
+          <option selected="selected" value={-1}>
+            Selecione uma opção
+          </option>
+        )}
         {children}
       </select>
       {hasError() && <p className="select__error-text">{get(errors, name)}</p>}
