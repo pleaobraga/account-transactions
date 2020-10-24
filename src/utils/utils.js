@@ -1,3 +1,5 @@
+import { OPERATION_NEGATIVE, OPERATION_POSITIVE } from './constants'
+
 export const simulateRequest = (data) => {
   var promise = new Promise(function (resolve) {
     window.setTimeout(function () {
@@ -42,4 +44,17 @@ export const monthName = [
   'Out',
   'Nov',
   'Dez',
+]
+
+export const operations = [
+  {
+    name: 'withdraw',
+    label: 'Retirada',
+    operationType: OPERATION_NEGATIVE,
+  },
+  {
+    name: 'deposit',
+    label: 'Deposito',
+    operationType: OPERATION_POSITIVE,
+  },
 ]
