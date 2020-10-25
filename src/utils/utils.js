@@ -1,4 +1,8 @@
 import { OPERATION_NEGATIVE, OPERATION_POSITIVE } from './constants'
+import {
+  getAccountDetails,
+  putAccountDetails,
+} from '../services/accountDetails'
 
 export const simulateRequest = (data) => {
   var promise = new Promise(function (resolve) {
@@ -58,3 +62,11 @@ export const operations = [
     operationType: OPERATION_POSITIVE,
   },
 ]
+
+export const getAccount = (id) => {
+  const account = getAccountDetails(id)
+
+  if (account) return account
+
+  return putAccountDetails(id)
+}

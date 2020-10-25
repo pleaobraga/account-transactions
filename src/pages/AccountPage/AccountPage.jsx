@@ -1,30 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { TransactionHistory } from '../../components/Organism/TransactionHistory'
 import { TotalBalance } from '../../components/Molecule/TotalBalance'
 import { Button } from '../../components/Atom/Button'
 import { NewTransactionForm } from '../../components/Organism/NewTransactionForm'
-
+import { getAccount } from '../../utils/utils'
+import Loading from '../../components/Atom/Loading'
 import './AccountPage.scss'
-
-const now = new Date()
-
-const transactions = [
-  {
-    id: 0,
-    date: now,
-    amount: 3200000000000000,
-    description: 'Description',
-  },
-  {
-    id: 1,
-    date: now,
-    amount: -32,
-    description: 'Description',
-  },
-]
 
 const AccountPage = () => {
   const [showForm, setShowForm] = useState(false)
+  const [accountDetails, setAccountDetails] = useState(null)
+  let { accountId } = useParams()
+
+  useEffect(() => {
+    const id = accountId || 0
+    const account = getAccount(id)
+    setAccountDetails({ ...account })
+  }, [getAccount, accountId])
 
   const hideForm = () => {
     setShowForm(false)
@@ -44,13 +37,17 @@ const AccountPage = () => {
       </Button>
     )
 
-  return (
+  console.log('accountDetails', accountDetails)
+
+  return !accountDetails ? (
+    <Loading />
+  ) : (
     <main className="page page-account">
-      <TotalBalance amount={500} />
+      <TotalBalance amount={accountDetails.amount} />
       {showForm && <NewTransactionForm onCancel={hideForm} />}
       <TransactionHistory
         formButton={renderShowFormBtn}
-        transactions={transactions}
+        transactions={accountDetails.transactions}
       />
     </main>
   )

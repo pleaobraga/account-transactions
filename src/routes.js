@@ -4,7 +4,7 @@ import DynamicImport from './components/DynamicImport'
 import ErrorPage from './pages/ErrorPage'
 import Loading from './components/Atom/Loading'
 
-const WelcomePage = () => (
+const AccountPage = () => (
   <DynamicImport
     loadComponent={() =>
       import(/*  webpackChunkName: "welcomePage" */ './pages/AccountPage')
@@ -14,23 +14,12 @@ const WelcomePage = () => (
   />
 )
 
-const ContentPage = () => (
-  <DynamicImport
-    loadComponent={() =>
-      import(/*  webpackChunkName: "contentPage" */ './pages/ContentPage')
-    }
-    ErrorComponent={() => ErrorPage}
-    LoadingComponent={() => <Loading />}
-  />
-)
-
 const Routes = () => {
   return (
     <BrowserRouter>
       <Suspense fallback={<ErrorPage />}>
         <Switch>
-          <Route path="/content" component={ContentPage} />
-          <Route exact path="/" component={WelcomePage} />
+          <Route exact path="/:accountId?" component={AccountPage} />
           <Route component={ErrorPage} />
         </Switch>
       </Suspense>

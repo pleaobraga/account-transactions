@@ -1,5 +1,6 @@
 export const getAccountDetails = (id) => {
-  return window.localStorage.getItem(id)
+  const account = window.localStorage.getItem(id)
+  return JSON.parse(account)
 }
 
 export const postAccountDetails = (id, transaction) => {
@@ -15,6 +16,7 @@ export const postAccountDetails = (id, transaction) => {
 
 export const putAccountDetails = (id) => {
   const newAccount = {
+    id,
     amount: 0,
     transactions: [],
   }
