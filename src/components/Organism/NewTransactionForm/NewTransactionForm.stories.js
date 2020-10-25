@@ -1,10 +1,10 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import NewTransaction from './NewTransaction'
+import NewTransactionForm from './NewTransactionForm'
 
 export default storiesOf('Components | Organism/New Transaction', module).add(
   'default',
-  () => <NewTransaction />,
+  () => <NewTransactionForm />,
   {
     info: { inline: true, header: false },
   }

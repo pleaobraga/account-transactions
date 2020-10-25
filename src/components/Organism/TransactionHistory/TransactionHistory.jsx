@@ -3,10 +3,13 @@ import PropTypes from 'prop-types'
 import { TransactionDetail } from '../TransactionDetail'
 import './TransactionHistory.scss'
 
-const TransactionHistory = ({ transactions }) => {
+const TransactionHistory = ({ transactions, formButton }) => {
   return (
-    <div className="transaction-history">
-      <h2 className="transaction-history__title">Histórico de Transações</h2>
+    <section className="transaction-history">
+      <div className="transaction-history__title-content">
+        <h2 className="transaction-history__title">Histórico de Transações</h2>
+        {formButton()}
+      </div>
       <ul className="transaction-history__list">
         {transactions.map(({ amount, id, date }) => (
           <li key={id} className="transaction-history__list-item">
@@ -14,12 +17,13 @@ const TransactionHistory = ({ transactions }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   )
 }
 
 TransactionHistory.propTypes = {
   transactions: PropTypes.arrayOf(PropTypes.shape(TransactionDetail.propTypes)),
+  formButton: PropTypes.func.isRequired,
 }
 
 export default TransactionHistory

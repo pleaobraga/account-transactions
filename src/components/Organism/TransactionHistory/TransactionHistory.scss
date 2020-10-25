@@ -4,9 +4,15 @@
 .transaction-history {
   width: 100%;
 
-  &__title {
-    font-size: 2.3rem;
-    color: $secondary;
+  &__title-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .transaction-history__title {
+      font-size: 2.3rem;
+      color: $secondary;
+    }
   }
 
   &__list {

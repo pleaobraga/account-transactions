@@ -3,11 +3,14 @@
 .balance {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  align-items: center;
   justify-content: space-around;
-  background-color: $grey;
+  align-items: center;
+
+  width: 100%;
   padding: 2.5rem;
+  margin-bottom: 3rem;
+
+  background-color: $grey;
   border-radius: 20px;
 
   &__title {

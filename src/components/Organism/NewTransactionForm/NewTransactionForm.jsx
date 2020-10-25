@@ -1,13 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Formik } from 'formik'
 import { Input } from '../../Atom/Input'
 import { Select } from '../../Atom/Select'
 import { Button } from '../../Atom/Button'
 import { formValidation, initialValues } from './formHelper'
 import { operations } from '../../../utils/utils'
-import './NewTransaction.scss'
+import './NewTransactionForm.scss'
 
-const NewTransaction = () => {
+const NewTransaction = ({ onCancel }) => {
   const onSubmit = () => {}
 
   return (
@@ -29,7 +30,7 @@ const NewTransaction = () => {
                   maxlength="50"
                   className="input--description"
                 />
-                <Input {...formikProps} label="Valor" name="amount" />
+                <Input {...formikProps} label="Valor R$" name="amount" />
                 <Select {...formikProps} label="Operação" name="operation">
                   {operations.map(({ label }, index) => (
                     <option value={index} key="label">
@@ -43,11 +44,12 @@ const NewTransaction = () => {
                   type="submit"
                   className="form__button form__button--submit"
                 >
-                  Enviar Tranzação
+                  Enviar Transação
                 </Button>
                 <Button
                   type="reset"
                   className="form__button form__button--cancel"
+                  onClick={onCancel}
                 >
                   Cancelar
                 </Button>
@@ -58,6 +60,10 @@ const NewTransaction = () => {
       </Formik>
     </section>
   )
+}
+
+NewTransaction.propTypes = {
+  onCancel: PropTypes.func.isRequired,
 }
 
 export default NewTransaction

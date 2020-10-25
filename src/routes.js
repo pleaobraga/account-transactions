@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import DynamicImport from './components/DynamicImport'
 import ErrorPage from './pages/ErrorPage'
-import Loading from './components/Loading'
+import Loading from './components/Atom/Loading'
 
 const WelcomePage = () => (
   <DynamicImport
