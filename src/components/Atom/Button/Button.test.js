@@ -1,11 +1,33 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import Card from './Card'
+import { mount } from 'enzyme'
+import Button from './Button'
 
-describe('Card', () => {
-  const card = shallow(<Card title="Test" text="test" />)
+describe('Button', () => {
+  const onClick = jest.fn()
+
+  const wrapper = mount(
+    <Button onClick={onClick}>
+      <span className="test">test</span>
+    </Button>
+  )
 
   it('render proprely', () => {
-    expect(card).toMatchSnapshot()
+    expect(wrapper.find('.button').length).toBe(1)
+  })
+
+
+  it('render other className', () => {
+    expect(wrapper.find('.test').length).toBe(1)
+  })
+
+
+  it('render children', () => {
+    expect(wrapper.find('.test').length).toBe(1)
+  })
+
+  it('execute click function', () => {
+    wrapper.find(Button).simulate('click')
+
+    expect(onClick.mock.calls.length).toBe(1)
   })
 })
