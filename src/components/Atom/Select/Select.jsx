@@ -27,8 +27,9 @@ const Select = ({
         className="select__field"
         name={name}
         onChange={handleChange}
+        defaultValue=""
       >
-        <option value="" selected disabled hidden>
+        <option value="" disabled hidden>
           Selecione
         </option>
 
