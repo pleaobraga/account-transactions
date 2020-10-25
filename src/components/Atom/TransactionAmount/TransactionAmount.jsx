@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { formatPrice } from '../../../utils/utils'
-import './TransationAmount.scss'
+import './TransactionAmount.scss'
 
-const TransationAmount = ({ amount }) => {
+const TransactionAmount = ({ amount }) => {
   const className = cx('transition-amount', {
     'transition-amount--negative': amount < 0,
     'transition-amount--positive': amount >= 0,
@@ -18,8 +18,8 @@ const TransationAmount = ({ amount }) => {
   )
 }
 
-TransationAmount.propTypes = {
+TransactionAmount.propTypes = {
   amount: PropTypes.number.isRequired,
 }
 
-export default TransationAmount
+export default TransactionAmount
