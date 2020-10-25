@@ -1,9 +1,4 @@
-// --- pages ---
+// --- operations ---
 
 export const OPERATION_POSITIVE = 'OPERATION_POSITIVE'
 export const OPERATION_NEGATIVE = 'OPERATION_NEGATIVE'
-
-//  content page
-export const GET_CONTENT = 'GET_CONTENT'
-export const GET_CONTENT_SUCCESS = 'GET_CONTENT_SUCCESS'
-export const GET_CONTENT_ERROR = 'GET_CONTENT_ERROR'
