@@ -4,12 +4,19 @@ import { Formik } from 'formik'
 import { Input } from '../../Atom/Input'
 import { Select } from '../../Atom/Select'
 import { Button } from '../../Atom/Button'
-import { formValidation, initialValues } from './formHelper'
+import { formValidation, initialValues, formatTransaction } from './formHelper'
 import { operations } from '../../../utils/utils'
+import { postAccountDetails } from '../../../services/accountDetails'
 import './NewTransactionForm.scss'
 
-const NewTransaction = ({ onCancel }) => {
-  const onSubmit = () => {}
+const NewTransaction = ({ onCancel, afterSave, accountId }) => {
+  const onSubmit = (values) => {
+    const now = new Date()
+    const transaction = formatTransaction({ ...values, date: now })
+
+    const updatedAccount = postAccountDetails(accountId, transaction)
+    afterSave(updatedAccount)
+  }
 
   return (
     <section className="new-transaction">
@@ -27,13 +34,13 @@ const NewTransaction = ({ onCancel }) => {
                   {...formikProps}
                   label="Descrição"
                   name="description"
-                  maxlength="50"
+                  maxLength="50"
                   className="input--description"
                 />
                 <Input {...formikProps} label="Valor R$" name="amount" />
                 <Select {...formikProps} label="Operação" name="operation">
                   {operations.map(({ label }, index) => (
-                    <option value={index} key="label">
+                    <option value={index} key={label}>
                       {label}
                     </option>
                   ))}
@@ -64,6 +71,8 @@ const NewTransaction = ({ onCancel }) => {
 
 NewTransaction.propTypes = {
   onCancel: PropTypes.func.isRequired,
+  accountId: PropTypes.string.isRequired,
+  afterSave: PropTypes.func,
 }
 
 export default NewTransaction

@@ -11,7 +11,7 @@ import './AccountPage.scss'
 const AccountPage = () => {
   const [showForm, setShowForm] = useState(false)
   const [accountDetails, setAccountDetails] = useState(null)
-  let { accountId } = useParams()
+  const { accountId } = useParams()
 
   useEffect(() => {
     const id = accountId || 0
@@ -27,6 +27,11 @@ const AccountPage = () => {
     setShowForm(true)
   }
 
+  const afterSaveTransaction = (account) => {
+    setAccountDetails({ ...account })
+    hideForm()
+  }
+
   const renderShowFormBtn = () =>
     !showForm && (
       <Button className="open-form-btn" onClick={openForm}>
@@ -37,14 +42,18 @@ const AccountPage = () => {
       </Button>
     )
 
-  console.log('accountDetails', accountDetails)
-
   return !accountDetails ? (
     <Loading />
   ) : (
     <main className="page page-account">
       <TotalBalance amount={accountDetails.amount} />
-      {showForm && <NewTransactionForm onCancel={hideForm} />}
+      {showForm && (
+        <NewTransactionForm
+          accountId={accountId || '0'}
+          afterSave={afterSaveTransaction}
+          onCancel={hideForm}
+        />
+      )}
       <TransactionHistory
         formButton={renderShowFormBtn}
         transactions={accountDetails.transactions}

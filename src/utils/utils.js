@@ -29,8 +29,10 @@ export const formatTime = (time) => {
 }
 
 export const formatFullTime = (date) => {
-  const hours = formatTime(date.getHours())
-  const minutes = formatTime(date.getMinutes())
+  const newDate = new Date(date)
+
+  const hours = formatTime(newDate.getHours())
+  const minutes = formatTime(newDate.getMinutes())
 
   return `${hours}:${minutes}`
 }
