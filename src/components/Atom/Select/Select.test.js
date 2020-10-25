@@ -24,11 +24,11 @@ describe('Select', () => {
   describe('Render only field', () => {
     const wrapper = setup()
 
-    it('should render component proprely', () => {
+    it('should render component properly', () => {
       expect(wrapper.find('.select').length).toBe(1)
     })
 
-    it('should render field proprely', () => {
+    it('should render field properly', () => {
       expect(wrapper.find('.select__field').length).toBe(1)
     })
 
@@ -44,7 +44,7 @@ describe('Select', () => {
   describe('Render label', () => {
     const wrapper = setup({ label: 'labelTest' })
 
-    it('should render label proprely', () => {
+    it('should render label properly', () => {
       expect(wrapper.find('.select__label').length).toBe(1)
     })
 
@@ -60,7 +60,7 @@ describe('Select', () => {
       errors: { inputTest: 'campo obrigatório' },
     })
 
-    it('should render error text proprely', () => {
+    it('should render error text properly', () => {
       expect(wrapper.find('.select__error-text').length).toBe(1)
     })
 

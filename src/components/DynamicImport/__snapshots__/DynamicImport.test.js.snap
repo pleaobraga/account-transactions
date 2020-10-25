@@ -32,7 +32,7 @@ exports[`DynamicImport Should render component 1`] = `
 </DynamicImport>
 `;
 
-exports[`DynamicImport render proprely 1`] = `
+exports[`DynamicImport render properly 1`] = `
 <DynamicImport
   ErrorComponent={[Function]}
   LoadingComponent={[Function]}

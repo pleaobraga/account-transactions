@@ -6,15 +6,15 @@ describe('Hours Format', () => {
   const date = new Date()
   const wrapper = mount(<HoursFormat date={date} />)
 
-  it('render wrapper proprely', () => {
+  it('render wrapper properly', () => {
     expect(wrapper.find('.hours-format').length).toBe(1)
   })
 
-  it('render icon proprely', () => {
+  it('render icon properly', () => {
     expect(wrapper.find('.hours-format__icon').length).toBe(1)
   })
 
-  it('render time proprely', () => {
+  it('render time properly', () => {
     expect(wrapper.find('.hours-format__time').length).toBe(1)
   })
 })

@@ -19,11 +19,11 @@ describe('Input', () => {
   describe('Render only field', () => {
     const wrapper = setup()
 
-    it('should render component proprely', () => {
+    it('should render component properly', () => {
       expect(wrapper.find('.input').length).toBe(1)
     })
 
-    it('should render field proprely', () => {
+    it('should render field properly', () => {
       expect(wrapper.find('.input__field').length).toBe(1)
     })
 
@@ -32,14 +32,14 @@ describe('Input', () => {
     })
 
     it('should not render error message', () => {
-      expect(wrapper.find('.input__error-tex').length).toBe(0)
+      expect(wrapper.find('.input__error-text').length).toBe(0)
     })
   })
 
   describe('Render label', () => {
     const wrapper = setup({ label: 'labelTest' })
 
-    it('should render label proprely', () => {
+    it('should render label properly', () => {
       expect(wrapper.find('.input__label').length).toBe(1)
     })
 
@@ -55,7 +55,7 @@ describe('Input', () => {
       errors: { inputTest: 'campo obrigatório' },
     })
 
-    it('should render error text proprely', () => {
+    it('should render error text properly', () => {
       expect(wrapper.find('.input__error-text').length).toBe(1)
     })
 

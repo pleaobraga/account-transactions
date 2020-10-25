@@ -5,7 +5,7 @@ import Card from './Card'
 describe('Card', () => {
   const card = shallow(<Card title="Test" text="test" />)
 
-  it('render proprely', () => {
+  it('render properly', () => {
     expect(card).toMatchSnapshot()
   })
 })

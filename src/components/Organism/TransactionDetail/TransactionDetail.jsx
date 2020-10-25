@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { CalendarFormat } from '../../Molecule/CalendarFormat'
 import { HoursFormat } from '../../Atom/HoursFormat'
-import { TransationAmount } from '../../Atom/TransationAmount'
+import { TransactionAmount } from '../../Atom/TransactionAmount'
 import './TransactionDetail.scss'
 
 const TransactionDetail = ({ amount, date, description }) => {
@@ -17,7 +17,7 @@ const TransactionDetail = ({ amount, date, description }) => {
       <div className="description">
         <h3 className="description__title">{description}</h3>
         <p className="description__value">
-          <TransationAmount amount={amount} />
+          <TransactionAmount amount={amount} />
         </p>
       </div>
       <div className="transaction-detail__date">

@@ -11,15 +11,13 @@ describe('Button', () => {
     </Button>
   )
 
-  it('render proprely', () => {
+  it('render properly', () => {
     expect(wrapper.find('.button').length).toBe(1)
   })
-
 
   it('render other className', () => {
     expect(wrapper.find('.test').length).toBe(1)
   })
-
 
   it('render children', () => {
     expect(wrapper.find('.test').length).toBe(1)

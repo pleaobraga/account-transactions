@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loading render proprely 1`] = `
+exports[`Loading render properly 1`] = `
 <Loading>
   <div
     className="loading undefined"

@@ -5,7 +5,7 @@ import WelcomePage from './WelcomePage'
 describe('welcomePage', () => {
   const welcomePage = shallow(<WelcomePage />)
 
-  it('render proprely', () => {
+  it('render properly', () => {
     expect(welcomePage).toMatchSnapshot()
   })
 })
