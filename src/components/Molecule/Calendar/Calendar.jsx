@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { monthName } from '../../../utils/utils'
-import './CalendarFormat.scss'
+import './Calendar.scss'
 
-const CalendarFormat = ({ date }) => {
+const Calendar = ({ date }) => {
   const newDate = new Date(date)
 
   return (
@@ -17,8 +17,8 @@ const CalendarFormat = ({ date }) => {
   )
 }
 
-CalendarFormat.propTypes = {
+Calendar.propTypes = {
   date: PropTypes.object.isRequired,
 }
 
-export default CalendarFormat
+export default Calendar

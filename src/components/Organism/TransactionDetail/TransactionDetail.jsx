@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { CalendarFormat } from '../../Molecule/CalendarFormat'
+import { Calendar } from '../../Molecule/Calendar'
 import { HoursFormat } from '../../Atom/HoursFormat'
 import { TransactionAmount } from '../../Atom/TransactionAmount'
 import './TransactionDetail.scss'
@@ -22,7 +22,7 @@ const TransactionDetail = ({ amount, date, description }) => {
       </div>
       <div className="transaction-detail__date">
         <HoursFormat date={date} />
-        <CalendarFormat date={date} />
+        <Calendar date={date} />
       </div>
     </div>
   )
