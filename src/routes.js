@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import DynamicImport from './components/DynamicImport'
+import DynamicImport from './components/UILess/DynamicImport'
 import ErrorPage from './pages/ErrorPage'
 import Loading from './components/Atom/Loading'
 
