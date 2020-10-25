@@ -36,9 +36,20 @@ const NewTransaction = ({ onCancel, afterSave, accountId }) => {
                   name="description"
                   maxLength="50"
                   className="input--description"
+                  test-data-id="description-input"
                 />
-                <Input {...formikProps} label="Valor R$" name="amount" />
-                <Select {...formikProps} label="Operação" name="operation">
+                <Input
+                  {...formikProps}
+                  label="Valor R$"
+                  name="amount"
+                  test-data-id="amount-input"
+                />
+                <Select
+                  {...formikProps}
+                  label="Operação"
+                  name="operation"
+                  test-data-id="operation-select"
+                >
                   {operations.map(({ label }, index) => (
                     <option value={index} key={label}>
                       {label}
@@ -50,6 +61,7 @@ const NewTransaction = ({ onCancel, afterSave, accountId }) => {
                 <Button
                   type="submit"
                   className="form__button form__button--submit"
+                  onClick={formikProps.handleSubmit}
                 >
                   Enviar Transação
                 </Button>
