@@ -5,7 +5,7 @@
     "^.+\\.jsx?$": "babel-jest"
   },
   "collectCoverageFrom": [
-    "**/*.{js,jsx}",
+    "src/**/*.{js,jsx}",
     "!**/index.js",
     "!**/*stories.{js,jsx}",
     "!**/routes.js",
