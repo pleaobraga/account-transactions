@@ -11,19 +11,19 @@ describe('Button', () => {
     </Button>
   )
 
-  it('render properly', () => {
+  it('should render properly', () => {
     expect(wrapper.find('.button').length).toBe(1)
   })
 
-  it('render other className', () => {
+  it('should render other className', () => {
     expect(wrapper.find('.test').length).toBe(1)
   })
 
-  it('render children', () => {
+  it('should render children', () => {
     expect(wrapper.find('.test').length).toBe(1)
   })
 
-  it('execute click function', () => {
+  it('should execute click function', () => {
     wrapper.find(Button).simulate('click')
 
     expect(onClick.mock.calls.length).toBe(1)
