@@ -11,7 +11,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'React Scaffold',
+      title: 'Account Details',
       template: 'public/index.html',
       favicon: './images/react.png',
     }),
@@ -22,6 +22,7 @@ module.exports = {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
 
   module: {
