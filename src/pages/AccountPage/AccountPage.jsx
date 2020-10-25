@@ -13,11 +13,13 @@ const transactions = [
     id: 0,
     date: now,
     amount: 3200000000000000,
+    description: 'Description',
   },
   {
     id: 1,
     date: now,
     amount: -32,
+    description: 'Description',
   },
 ]
 

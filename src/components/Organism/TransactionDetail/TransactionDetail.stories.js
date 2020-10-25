@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { number } from '@storybook/addon-knobs'
+import { number, text } from '@storybook/addon-knobs'
 import TransactionDetail from './TransactionDetail'
 
 const now = new Date()
@@ -10,7 +10,13 @@ export default storiesOf(
   module
 ).add(
   'default',
-  () => <TransactionDetail date={now} amount={number('amount', 32)} />,
+  () => (
+    <TransactionDetail
+      date={now}
+      amount={number('amount', 32)}
+      description={text('description', 'Description')}
+    />
+  ),
   {
     info: { inline: true, header: false },
   }

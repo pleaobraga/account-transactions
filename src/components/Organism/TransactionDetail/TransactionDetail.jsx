@@ -6,7 +6,7 @@ import { HoursFormat } from '../../Atom/HoursFormat'
 import { TransationAmount } from '../../Atom/TransationAmount'
 import './TransactionDetail.scss'
 
-const TransactionDetail = ({ amount, date }) => {
+const TransactionDetail = ({ amount, date, description }) => {
   const className = cx('transaction-detail', {
     'transaction-detail--negative': amount < 0,
     'transaction-detail--positive': amount >= 0,
@@ -15,9 +15,7 @@ const TransactionDetail = ({ amount, date }) => {
   return (
     <div className={className}>
       <div className="description">
-        <h3 className="description__title">
-          dadasdadsdasdasdasdasdasdasdasdadasdasdasdsadsadas
-        </h3>
+        <h3 className="description__title">{description}</h3>
         <p className="description__value">
           <TransationAmount amount={amount} />
         </p>
@@ -34,6 +32,7 @@ TransactionDetail.propTypes = {
   id: PropTypes.number.isRequired,
   amount: PropTypes.number.isRequired,
   date: PropTypes.object.isRequired,
+  description: PropTypes.string.isRequired,
 }
 
 export default TransactionDetail

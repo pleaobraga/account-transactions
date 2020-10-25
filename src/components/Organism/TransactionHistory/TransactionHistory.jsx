@@ -10,11 +10,15 @@ const TransactionHistory = ({ transactions, formButton }) => {
     </p>
   )
 
-  const renderTransaction= () => (
+  const renderTransaction = () => (
     <ul className="transaction-history__list">
-      {transactions.map(({ amount, id, date }) => (
+      {transactions.map(({ amount, id, date, description }) => (
         <li key={id} className="transaction-history__list-item">
-          <TransactionDetail amount={amount} date={date} />
+          <TransactionDetail
+            amount={amount}
+            date={date}
+            description={description}
+          />
         </li>
       ))}
     </ul>
