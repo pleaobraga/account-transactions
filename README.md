@@ -1,52 +1,45 @@
-# React Scaffold
+# Account Transaction ![Open Source Love](https://raw.githubusercontent.com/ellerbrock/open-source-badges/master/badges/open-source-v3/open-source.svg?sanitize=true)
 
-This is a React based project, which I built from scratch, that helps you to start quickly your own new React Project.
+Este projeto é um consiste em simular transações bancárias de deposito e saques, logando as transações e calculando o saldo acumulado.
 
-It is integrated with the newest libraries such as:
+A aplicação é baseada em **React** e utliza as seguintes bibliotecas:
 
 - Redux
 - React Router Dom
+- Formik
 - Jest
 - Enzyme
 - Storybook
 - Babel
 - Webpack
 
-There is a small implementation which can helps you to:
-
-- Improve the architecture of your project
-- Test your project with Jest and Enzyme
-- Increase the performance of your project using dynamic imports
-- See practical examples of the new \***\*React Hooks feature**
-- See some implementation of the new React-redux features like useSelector and useDispatch
-- Document your project with Storybook
-- Improve your code using Prettier and ESlint
-
 # Quick Start
 
-## Installing dependencies
+## Instalando as dependencias
 
 ```
 yarn
 ```
 
-## Starting the project
+## Iniciando o Projeto
 
-To start the project use this command in your terminal and wait for a few seconds and the project will open a new tab in your browser automatically
+Após instalar as dependencias utilize o comando a baixo para iniciar a aplicação.
 
 ```
 yarn start
 ```
 
-### Changing default port
+Espere alguns segundos e automaticamente uma aba do seu navegador será iniciada rodando a aplicação
 
-The default port is 8080 but if you want to change it to the port 3000 use this command
+### Mudar a porta padrão
+
+A porta padrão do projeto é 8080 mas caso deseje mudar, faça como o exemplo a baixo (mudando para aporta 3000)
 
 ```
 yarn start -- --port=3000
 ```
 
-## Build the project
+## Criar a build do projeto
 
 ```
 yarn build
@@ -54,114 +47,81 @@ yarn build
 
 ## Testing the project
 
-There are some commands to test the project
+Os testes automatizados foram escritos usando as bibliotecas **Jest** e **Enzyme**
 
-### Test all project
+### Testar todo o Projeto
 
 ```
 yarn test
 ```
 
-### Watch Tests in the project
+### COnferindo a cobertura de Testes
 
-```
-yarn test:watch
-```
-
-### Update snapshots
-
-```
-yarn test:update
-```
-
-### Check the coverage
+A cobertura de testes escrita foi de **94.3%**
 
 ```
 yarn test:coverage
 ```
 
-## Using Storybok
+## Usando o Storybok
 
-To start the Storybook use the command, it will open a new webpage with Storybook running on port 9000
+Esse Projeto utiliza o **storybook** como ferramenta de dosumentação dos elementos da UI, e para acessa-lo basta executar:
 
 ```
 yarn storybook
 ```
 
-### Addons
-
-The storybook is already configured with some addons like Knobs, Actions, and Info.
-
-### Create a new story
-
-To create a new story, create a file {yourComponent}.stories.js and the storybook is already configurated to load your new story, just stop the storybook process and start it again.
-
-### Create a new story with Redux
-
-You need to add a provider as decorator before the component:
-
-```
-  export default storiesOf('Pages | ContentPage', module)
-  .addDecorator(withProvider)
-  .add('default', () => <ContentPage getContent={getContent} />, {
-    info: { inline: true, header: false }
-  })
-```
-
 ## Commits
 
-This project uses Husk.js and everytime you push the code it will run the pre-commit task to check the lint and run all tests, **so the code will only be pushed if it follows the lint rules and does not have any test errors.**
+Esse projeto utiliza o **Husk.js** está configurado para executar o lint e testar toda a aplicação antes do push. Caso exista algum teste quebrado ou algo fora dos padroes do lint não será possivel executar o push.
 
-## Project Architecture
+## Architetura do Projeto
 
-The project uses SOLID principles and base page architecture.
-The Source folder is:
+O projeto utiliza a arquitetura baseada em **Atomic Design** e também utiliza os padroes **SOLID**
+
+Abaixo podemos ver um pouco sobre a arquitetura do projeto
 
 ```
 src
   components
+    Atom
+    Molecule
+    Organism
+    UILess
   pages
-  redux
-  utils
+  helpers
   routes.js
   index
 ```
 
-### Components Pages
-
-The architecture for the components is:
+### Arquitetura dos componentes
 
 ```
-components
-  Component
-    index.js
-    Component.test.js
-    Component.stories.js (when it makes sense)
-    Component.scss (when it makes sense)
-    Component.jsx
+Component
+  index.js
+  Component.test.js
+  Component.stories.js
+  Component.scss
+  Component.jsx
 ```
 
-So each component has its own tests, stories, jsx file and a index to export what is necessary.
+Cada Componente possui seu proprio testesm stories, arquivos jsx, e um index para exportar o que for necessário
 
-This architechture is easy to mantain because to fix a component you can go in its folder and change everithing you need (all components are decoupled).
+Esta arquitetura é facil de se manter, pois esta tudo centralizado, e caso precise mudar algo o arquivo sera encontrado dentro da própria pasta do componente.
 
-### Reducers
+### Helpers
 
-For this example I did not split the reducer from the action creators because this project is too small, but if the project increase it's better split reducer from its actions.
+Na pasta Helpers se encontram os arquivos de constantes e funções gerais utilizadas na aplicação
 
-### Utils
+## Dynamic Import e Performace
 
-In the utils folder I keep some functions and the constants files
+Nos dias atuais precisamos pensar em performance, caso contrario a aplicação poderá não oferecer uma boa experiencia para o usuário.
 
-## Dynamic Import and Performance
+Existe nesse projeto um componente chamado **DynamicImport**, eçe é integrado ao webpack e ele basicamente importa dinamicamente apenas bundle que aquela página esta usando no momento, sendo assim reduzindo muitas vezes a quantidade de arquivos a serem requisitados pelo browser ao carregar uma tela.
 
-Nowadays we need to pay attention on performace, if we do not take care of it, your project would work but slowly and the customer experience will be very frustrating.
+Ele foi aplicado no arquivo **routes.js**, dessa forma cada pagina que voce importar irá criar um bundle otimizado automaticanete.
 
-I created in ths project a component called **DynamicImport**, it is integrated with the webpack and what it does is basically import the bundle of the content only when the component is rendered in the page.
-
-It was applied in the **routes.js** file, so each page that you import will automaticaly create a new optimal bundle.
-
-This is a example how to use the DynamicImports
+A seguir um explo para de como utilizar o **DynamicImport**
 
 ```
 const WelcomePage = () => (
@@ -175,17 +135,36 @@ const WelcomePage = () => (
 )
 ```
 
-This component is better than **React.lazy** because it can handle 3 diferent situations:
+Esse componente é melhor que o **React.lazy** pois ele possui 3 estados diferentes:
 
 - Loading
 - Error
 - Component
 
-diferent from **React.lazy** and **React.Suspense** which could only handle 2 situations:
+O que difere do **React.lazy** e **React.Suspense** que apenas lidam com apenas 2 estados:
 
 - Loading
 - Component
 
 ## Vendors
 
-The webpack is configurated to create a vendors file with common libraries like react, redux ...
+O webpack esta configurado para criar o arquivo de vendros com as bibliotecas comuns da aplicação como por exemplo react, redux ...
+
+## A solução do problema
+
+Foi criado uma aplicação baseada em React, e não foi utilizado o **create-ract-app** como sua base, mas sim um projeto chamado [**react-scaffold**](https://github.com/pleaobraga/react-scaffold) quer é de minha autoria, open-souce, onde eu configurei o projeto do zero (webpack, eslint...), para maiores detalhes acesse o link https://github.com/pleaobraga/react-scaffold
+
+Utilizando o **react-scaffold** como base foi-se pensado em uma forma de criar uma aplicação bonita, facil de usar. Dessa forma foi-se utilizado o **Storybook** para a criação dos components, todos feitos sem utilizar nenhum framework de CSS. A aplicação utiliza tecnicas modernas de **CSS** como por exemplo _Flexbox_, _Sass_, e o layout é **Resposivo**
+
+Os componentes foram pensados utilizando a arquitetura **Atomic Design** e Principios **SOLID** e utilizando boas praticas de **Clean Code**
+
+Para a aplicação funcionar mesmo se o browser fechar foi utilizado o LocalStorage para armazenar localmente os dados, entre suas vantagens estam
+
+- Funciona em todos os browser
+- Suas funções não são assincronas (nesse projeto foi uma vantagem)
+
+Mesmo não sendo uma opção segura o objetivo era apenas poder salvar os dados sem utilizar um banco de dados e uma api, e utiliza-los novamente
+
+Para não haver acoplamento entre camadas foi criado a pasta **Service** exportando apenas as funções utilizadas para o manuzeio dos dados salvos, dessa forma caso seja necessario a mudança do localstorage por uma outra forma de acessar os dados, é necessario mudar apenas a implementação no services.
+
+Como a aplicação é pequena não houve a necesidade de ter um gerenciador de estados global como por exemplo o **Redux**, no entanto foi utilizado as  **React Hooks** para criar os componentes, o **Formik** para o formulário, o **React-Router-DOM** para o gerenciamento de rotas.
