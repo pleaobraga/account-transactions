@@ -13,7 +13,7 @@ const HoursFormat = ({ date }) => {
 }
 
 HoursFormat.propTypes = {
-  date: PropTypes.object.isRequired,
+  date: PropTypes.string.isRequired,
 }
 
 export default HoursFormat

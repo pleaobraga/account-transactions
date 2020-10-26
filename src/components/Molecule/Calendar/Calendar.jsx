@@ -18,7 +18,7 @@ const Calendar = ({ date }) => {
 }
 
 Calendar.propTypes = {
-  date: PropTypes.object.isRequired,
+  date: PropTypes.string.isRequired,
 }
 
 export default Calendar

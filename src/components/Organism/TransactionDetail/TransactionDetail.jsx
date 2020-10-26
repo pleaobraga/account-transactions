@@ -29,9 +29,8 @@ const TransactionDetail = ({ amount, date, description }) => {
 }
 
 TransactionDetail.propTypes = {
-  id: PropTypes.number.isRequired,
   amount: PropTypes.number.isRequired,
-  date: PropTypes.object.isRequired,
+  date: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 }
 
