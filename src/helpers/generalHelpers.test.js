@@ -1,13 +1,4 @@
-import { formatPrice, formatTime, formatFullTime, getAccount } from './utils'
-import { getAccountDetails } from '../services/accountDetails'
-
-jest.mock('../services/accountDetails', () => ({
-  getAccountDetails: jest
-    .fn()
-    .mockReturnValueOnce('getAccountDetails')
-    .mockReturnValueOnce(null),
-  putAccountDetails: () => 'putAccountDetails',
-}))
+import { formatPrice, formatTime, formatFullTime } from './generalHelpers'
 
 describe('formatPrice', () => {
   it('should formate price', () => {
@@ -54,17 +45,5 @@ describe('formatFullTime', () => {
     it(`should get full time ${fullDate}`, () => {
       expect(formatFullTime(fullDate)).toBe(n)
     })
-  })
-})
-
-describe('getAccount', () => {
-  it('should return account', () => {
-    getAccountDetails.mockImplementation(() => 'getAccountDetails')
-    expect(getAccount(12)).toBe('getAccountDetails')
-  })
-
-  it('should create new account', () => {
-    getAccountDetails.mockImplementation(() => null)
-    expect(getAccount(12)).toBe('putAccountDetails')
   })
 })

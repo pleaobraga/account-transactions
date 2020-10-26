@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { monthName } from '../../../utils/utils'
+import { monthName } from '../../../helpers/generalHelpers'
 import './Calendar.scss'
 
 const Calendar = ({ date }) => {

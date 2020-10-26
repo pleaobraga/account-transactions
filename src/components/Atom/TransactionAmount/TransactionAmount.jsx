@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { formatPrice } from '../../../utils/utils'
+import { formatPrice } from '../../../helpers/generalHelpers'
 import './TransactionAmount.scss'
 
 const TransactionAmount = ({ amount }) => {

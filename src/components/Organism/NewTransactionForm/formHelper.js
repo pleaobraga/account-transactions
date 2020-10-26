@@ -1,6 +1,6 @@
 import * as Yup from 'yup'
-import { OPERATION_NEGATIVE } from '../../../utils/constants'
-import { operations } from '../../../utils/utils'
+import { OPERATION_NEGATIVE } from '../../../helpers/constants'
+import { operations } from '../../../helpers/accountHelpers'
 
 export const formValidation = Yup.object().shape({
   description: Yup.string().required('Campo Obrigatório'),

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { formatPrice } from '../../../utils/utils'
+import { formatPrice } from '../../../helpers/generalHelpers'
 import './TotalBalance.scss'
 
 const TotalBalance = ({ amount }) => {

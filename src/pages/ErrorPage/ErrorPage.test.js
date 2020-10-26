@@ -1,11 +1,11 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import ErrorPage from './ErrorPage'
 
 describe('ErrorPage', () => {
-  const errorPage = shallow(<ErrorPage />)
+  const wrapper = mount(<ErrorPage />)
 
   it('should render properly', () => {
-    expect(errorPage).toMatchSnapshot()
+    expect(wrapper.find(ErrorPage).length).toBe(1)
   })
 })

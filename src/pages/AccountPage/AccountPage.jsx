@@ -4,7 +4,7 @@ import { TransactionHistory } from '../../components/Organism/TransactionHistory
 import { TotalBalance } from '../../components/Molecule/TotalBalance'
 import { Button } from '../../components/Atom/Button'
 import { NewTransactionForm } from '../../components/Organism/NewTransactionForm'
-import { getAccount } from '../../utils/utils'
+import { getAccount } from '../../helpers/accountHelpers'
 import ErrorPage from '../ErrorPage'
 import Loading from '../../components/Atom/Loading'
 import './AccountPage.scss'

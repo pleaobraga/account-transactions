@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { formatFullTime } from '../../../utils/utils'
+import { formatFullTime } from '../../../helpers/generalHelpers'
 import './HoursFormat.scss'
 
 const HoursFormat = ({ date }) => {
