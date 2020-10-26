@@ -5,7 +5,7 @@ import ErrorPage from './ErrorPage'
 describe('ErrorPage', () => {
   const errorPage = shallow(<ErrorPage />)
 
-  it('render properly', () => {
+  it('should render properly', () => {
     expect(errorPage).toMatchSnapshot()
   })
 })

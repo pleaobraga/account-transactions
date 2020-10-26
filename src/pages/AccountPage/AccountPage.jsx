@@ -5,6 +5,7 @@ import { TotalBalance } from '../../components/Molecule/TotalBalance'
 import { Button } from '../../components/Atom/Button'
 import { NewTransactionForm } from '../../components/Organism/NewTransactionForm'
 import { getAccount } from '../../utils/utils'
+import ErrorPage from '../ErrorPage'
 import Loading from '../../components/Atom/Loading'
 import './AccountPage.scss'
 
@@ -14,7 +15,7 @@ const AccountPage = () => {
   const { accountId } = useParams()
 
   useEffect(() => {
-    const id = accountId || 0
+    const id = accountId || '0'
     const account = getAccount(id)
     setAccountDetails({ ...account })
   }, [getAccount, accountId])
@@ -42,8 +43,12 @@ const AccountPage = () => {
       </Button>
     )
 
-  return !accountDetails ? (
-    <Loading />
+  if (!accountDetails) {
+    return <Loading />
+  }
+
+  return accountDetails.error ? (
+    <ErrorPage message="Os Dados salvos Foram corrompidos, limpe os dados ou use uma outra conta" />
   ) : (
     <main className="page account-page">
       <TotalBalance amount={accountDetails.amount} />
