@@ -28,7 +28,7 @@ const TransactionHistory = ({ transactions, formButton }) => {
     <section className="transaction-history">
       <div className="transaction-history__title-content">
         <h2 className="transaction-history__title">Histórico de Transações</h2>
-        {formButton()}
+        {formButton && formButton()}
       </div>
       {transactions.length > 0 ? renderTransaction() : renderEmptyList()}
     </section>
@@ -37,7 +37,7 @@ const TransactionHistory = ({ transactions, formButton }) => {
 
 TransactionHistory.propTypes = {
   transactions: PropTypes.arrayOf(PropTypes.shape(TransactionDetail.propTypes)),
-  formButton: PropTypes.func.isRequired,
+  formButton: PropTypes.func,
 }
 
 export default TransactionHistory

@@ -11,7 +11,7 @@ describe('Button', () => {
     </Button>
   )
 
-  it('should render properly', () => {
+  it('should render component properly', () => {
     expect(wrapper.find('.button').length).toBe(1)
   })
 
