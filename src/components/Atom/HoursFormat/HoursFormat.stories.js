@@ -6,7 +6,11 @@ const now = new Date()
 
 export default storiesOf('Components | Atom/Hours Format', module).add(
   'default',
-  () => <HoursFormat date={now} />,
+  () => (
+    <div style={{ width: '50px' }}>
+      <HoursFormat date={now} />
+    </div>
+  ),
   {
     info: { inline: true, header: false },
   }

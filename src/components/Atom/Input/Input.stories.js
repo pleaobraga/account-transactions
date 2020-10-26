@@ -17,21 +17,7 @@ export default storiesOf('Components | Atom/Input', module)
   )
   .add(
     'default',
-    (props) => (
-      <form>
-        <Input {...props} name="test" label={text('Label', 'Label')} />
-        <button
-          type="submit"
-          onClick={(e) => {
-            e.preventDefault()
-            e.stopPropagation()
-            props.setTouched({ test: true }, true)
-          }}
-        >
-          enviar
-        </button>
-      </form>
-    ),
+    (props) => <Input {...props} name="test" label={text('Label', 'Label')} />,
     {
       info: { inline: true, header: false, propTables: [Input] },
     }
