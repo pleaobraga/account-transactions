@@ -169,6 +169,8 @@ Para não haver acoplamento entre camadas foi criado a pasta **Service** exporta
 
 Como a aplicação é pequena não houve a necesidade de ter um gerenciador de estados global como por exemplo o **Redux**, no entanto foi utilizado as **React Hooks** para criar os componentes, o **Formik** para o formulário, o **React-Router-DOM** para o gerenciamento de rotas. A aplicação foi testada utilizando o **Jest** e **Enzyme**.
 
+A aplicação doi toda desenvolvida na branch develop e após o desenvolvimento mergeada na branch master
+
 Algumas features implementadas:
 
 ### Conta por rota
