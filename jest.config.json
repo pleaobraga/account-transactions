@@ -6,6 +6,7 @@
   },
   "collectCoverageFrom": [
     "src/**/*.{js,jsx}",
+    "!**/formHelper.js",
     "!**/index.js",
     "!**/*stories.{js,jsx}",
     "!**/routes.js",
