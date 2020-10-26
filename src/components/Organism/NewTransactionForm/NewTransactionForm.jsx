@@ -31,25 +31,31 @@ const NewTransaction = ({ onCancel, afterSave, accountId }) => {
             <form onSubmit={formikProps.handleSubmit} className="form">
               <div className="form__fields">
                 <Input
-                  {...formikProps}
                   label="Descrição"
                   name="description"
                   maxLength="50"
                   className="input--description"
-                  test-data-id="description-input"
+                  errors={formikProps.errors}
+                  handleChange={formikProps.handleChange}
+                  touched={formikProps.touched}
+                  handleBlur={formikProps.handleBlur}
                 />
                 <Input
-                  {...formikProps}
                   label="Valor R$"
                   name="amount"
-                  test-data-id="amount-input"
                   type="number"
+                  errors={formikProps.errors}
+                  handleChange={formikProps.handleChange}
+                  touched={formikProps.touched}
+                  handleBlur={formikProps.handleBlur}
                 />
                 <Select
-                  {...formikProps}
                   label="Operação"
                   name="operation"
-                  test-data-id="operation-select"
+                  errors={formikProps.errors}
+                  handleChange={formikProps.handleChange}
+                  touched={formikProps.touched}
+                  handleBlur={formikProps.handleBlur}
                 >
                   {operations.map(({ label }, index) => (
                     <option value={index} key={label}>

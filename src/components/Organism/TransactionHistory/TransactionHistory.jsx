@@ -12,8 +12,8 @@ const TransactionHistory = ({ transactions, formButton }) => {
 
   const renderTransaction = () => (
     <ul className="transaction-history__list">
-      {transactions.map(({ amount, id, date, description }) => (
-        <li key={id} className="transaction-history__list-item">
+      {transactions.map(({ amount, date, description }) => (
+        <li key={date} className="transaction-history__list-item">
           <TransactionDetail
             amount={amount}
             date={date}

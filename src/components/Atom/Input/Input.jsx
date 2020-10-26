@@ -10,6 +10,7 @@ const Input = ({
   errors,
   handleChange,
   touched,
+  handleBlur,
   className,
   ...otherProps
 }) => {
@@ -24,6 +25,7 @@ const Input = ({
       {label && <label className="input__label">{label}</label>}
       <input
         {...otherProps}
+        onBlur={handleBlur}
         className="input__field"
         name={name}
         onChange={handleChange}
@@ -38,6 +40,7 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   errors: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
+  handleBlur: PropTypes.func.isRequired,
   touched: PropTypes.object.isRequired,
   className: PropTypes.string,
 }

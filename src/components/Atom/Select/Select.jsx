@@ -11,6 +11,7 @@ const Select = ({
   handleChange,
   touched,
   children,
+  handleBlur,
   ...otherProps
 }) => {
   const hasError = () => has(errors, name) && has(touched, name)
@@ -24,6 +25,7 @@ const Select = ({
       {label && <label className="select__label">{label}</label>}
       <select
         {...otherProps}
+        onBlur={handleBlur}
         className="select__field"
         name={name}
         onChange={handleChange}
@@ -45,6 +47,7 @@ Select.propTypes = {
   name: PropTypes.string.isRequired,
   errors: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
+  handleBlur: PropTypes.func.isRequired,
   touched: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
 }
