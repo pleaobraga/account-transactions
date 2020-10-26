@@ -22,18 +22,31 @@
     &__fields {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
 
       .select {
         width: 100%;
         max-width: 18%;
+
+        @include respond(phone) {
+          max-width: 30%;
+        }
       }
 
       .input {
         width: 100%;
         max-width: 20%;
 
+        @include respond(phone) {
+          max-width: 60%;
+        }
+
         &.input--description {
           max-width: 50%;
+
+          @include respond(phone) {
+            max-width: 100%;
+          }
         }
       }
     }
@@ -48,6 +61,10 @@
       background-color: $white;
 
       margin: auto;
+
+      @include respond(phone) {
+        margin-top: 2rem;
+      }
 
       &--submit {
         color: $primary;
