@@ -154,7 +154,7 @@ O webpack esta configurado para criar o arquivo de vendros com as bibliotecas co
 
 Foi criado uma aplicação baseada em React, e não foi utilizado o **create-ract-app** como sua base, mas sim um projeto chamado [**react-scaffold**](https://github.com/pleaobraga/react-scaffold) quer é de minha autoria, open-souce, onde eu configurei o projeto do zero (webpack, eslint...), para maiores detalhes acesse o link https://github.com/pleaobraga/react-scaffold
 
-Utilizando o **react-scaffold** como base foi-se pensado em uma forma de criar uma aplicação bonita, facil de usar. Dessa forma foi-se utilizado o **Storybook** para a criação dos components, todos feitos sem utilizar nenhum framework de CSS. A aplicação utiliza tecnicas modernas de **CSS** como por exemplo _Flexbox_, _Sass_, e o layout é **Resposivo**
+Utilizando o **react-scaffold** como base foi-se pensado em uma forma de criar uma aplicação bonita, facil de usar. Dessa forma foi-se utilizado o **Storybook** para a criação dos components, todos feitos sem utilizar nenhum framework de CSS, tudo feito a mão e do zero. A aplicação utiliza tecnicas modernas de **CSS** como por exemplo _Flexbox_, _Sass_, e o layout é **Resposivo**
 
 Os componentes foram pensados utilizando a arquitetura **Atomic Design** e Principios **SOLID** e utilizando boas praticas de **Clean Code**
 
@@ -167,4 +167,39 @@ Mesmo não sendo uma opção segura o objetivo era apenas poder salvar os dados 
 
 Para não haver acoplamento entre camadas foi criado a pasta **Service** exportando apenas as funções utilizadas para o manuzeio dos dados salvos, dessa forma caso seja necessario a mudança do localstorage por uma outra forma de acessar os dados, é necessario mudar apenas a implementação no services.
 
-Como a aplicação é pequena não houve a necesidade de ter um gerenciador de estados global como por exemplo o **Redux**, no entanto foi utilizado as  **React Hooks** para criar os componentes, o **Formik** para o formulário, o **React-Router-DOM** para o gerenciamento de rotas.
+Como a aplicação é pequena não houve a necesidade de ter um gerenciador de estados global como por exemplo o **Redux**, no entanto foi utilizado as **React Hooks** para criar os componentes, o **Formik** para o formulário, o **React-Router-DOM** para o gerenciamento de rotas. A aplicação foi testada utilizando o **Jest** e **Enzyme**.
+
+Algumas features implementadas:
+
+### Conta por rota
+
+Cada rota aprenta uma conta difernte
+
+_localhost:8080/{accountId}_
+
+a rota _localhost:8080/p_ cria uma conta _p_ e voce pode realizar todas as tranzações la
+
+caso acesse a rota _localhost:8080/1_ outra conta, a conta _1_ é criada e as tranzações acontecem apenas nessa nova rota
+
+caso o usuario volte para a rota _localhost:8080/p_ ele verá os dados da conta _p_ novamente
+
+### Conta criada instantaneamente
+
+Ao acessar uma rota _localhost:8080/{accountId}_ caso a conta não exista é criada instantaneamente, caso a mesma exista será mostrado os dados existentes.
+
+a rota _localhost:8080/_ utiliza como padrão o **accountId = '0'**
+
+### Validação dos dados
+
+Como os dados estão salvos no _localStorage_ é possivel manipula-lo atravez do console, e por esse motivo foi criado uma validação dos dados da conta. Caso o usuário por algum motivo mude sem querer os dados da conta atravez do console do browser, **Alterando a estrutura da conta**, será exibida uma mensagem na tela apontando erro de consistencia de dados
+
+### Validação da Rota
+
+Caso o usuario tente acessar uma rota diferente da _localhost:8080/{accountId}_ como por exemplo _localhost:8080/1/1_ uma erro será exibido na tela
+
+## Proximos passos
+
+- Implementar um sistema de login para separar melhor os dados de cada conta
+- Trocar o localstorage por algo mais seguro como por exemplo o **FireBase**
+- Melhorar o layout do mobile para que não seja preciso subir ao topo para criar uma nova transação
+- No formuãrio de criação de transação aplicar uma mascara ao campo de valor
