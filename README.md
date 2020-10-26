@@ -55,7 +55,7 @@ Os testes automatizados foram escritos usando as bibliotecas **Jest** e **Enzyme
 yarn test
 ```
 
-### COnferindo a cobertura de Testes
+### Conferindo a cobertura de Testes
 
 A cobertura de testes escrita foi de **94.3%**
 
@@ -63,7 +63,7 @@ A cobertura de testes escrita foi de **94.3%**
 yarn test:coverage
 ```
 
-## Usando o Storybok
+## Usando o Storybook
 
 Esse Projeto utiliza o **storybook** como ferramenta de dosumentação dos elementos da UI, e para acessa-lo basta executar:
 
@@ -75,7 +75,7 @@ yarn storybook
 
 Esse projeto utiliza o **Husk.js** está configurado para executar o lint e testar toda a aplicação antes do push. Caso exista algum teste quebrado ou algo fora dos padroes do lint não será possivel executar o push.
 
-## Architetura do Projeto
+## Arquitetura do Projeto
 
 O projeto utiliza a arquitetura baseada em **Atomic Design** e também utiliza os padroes **SOLID**
 
@@ -113,7 +113,7 @@ Esta arquitetura é facil de se manter, pois esta tudo centralizado, e caso prec
 
 Na pasta Helpers se encontram os arquivos de constantes e funções gerais utilizadas na aplicação
 
-## Dynamic Import e Performace
+## Dynamic Import e Performance
 
 Nos dias atuais precisamos pensar em performance, caso contrario a aplicação poderá não oferecer uma boa experiencia para o usuário.
 
@@ -203,5 +203,5 @@ Caso o usuario tente acessar uma rota diferente da _localhost:8080/{accountId}_ 
 
 - Implementar um sistema de login para separar melhor os dados de cada conta
 - Trocar o localstorage por algo mais seguro como por exemplo o **FireBase**
-- Melhorar o layout do mobile para que não seja preciso subir ao topo para criar uma nova transação
+- Melhorar o layout para que não seja preciso subir ao topo para criar uma nova transação
 - No formuãrio de criação de transação aplicar uma mascara ao campo de valor
