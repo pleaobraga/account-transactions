@@ -12,6 +12,10 @@
     .transaction-history__title {
       font-size: 2.3rem;
       color: $secondary;
+
+      @include respond(phone) {
+        font-size: 2rem;
+      }
     }
   }
 

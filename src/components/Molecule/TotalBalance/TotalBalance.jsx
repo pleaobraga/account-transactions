@@ -6,7 +6,7 @@ import './TotalBalance.scss'
 const TotalBalance = ({ amount }) => {
   return (
     <div className="balance">
-      <h2 className="balance__title">Saldo Total</h2>
+      <h1 className="balance__title">Saldo Total</h1>
       <p className="balance__value">{formatPrice(amount)}</p>
     </div>
   )

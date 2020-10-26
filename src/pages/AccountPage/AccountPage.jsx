@@ -37,7 +37,7 @@ const AccountPage = () => {
       <Button className="open-form-btn" onClick={openForm}>
         <span className="open-form-btn__content">
           <i className="material-icons btn__icon">import_export</i>
-          Criar Transação
+          Nova Transação
         </span>
       </Button>
     )
@@ -45,7 +45,7 @@ const AccountPage = () => {
   return !accountDetails ? (
     <Loading />
   ) : (
-    <main className="page page-account">
+    <main className="page account-page">
       <TotalBalance amount={accountDetails.amount} />
       {showForm && (
         <NewTransactionForm

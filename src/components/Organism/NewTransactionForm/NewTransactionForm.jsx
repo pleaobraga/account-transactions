@@ -43,6 +43,7 @@ const NewTransaction = ({ onCancel, afterSave, accountId }) => {
                   label="Valor R$"
                   name="amount"
                   test-data-id="amount-input"
+                  type="number"
                 />
                 <Select
                   {...formikProps}

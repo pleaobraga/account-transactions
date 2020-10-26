@@ -1,6 +1,7 @@
 @import '../../styles/colors';
+@import '../../styles/mixins';
 
-.page-account {
+.account-page {
   flex-direction: column;
 
   .open-form-btn {
@@ -11,6 +12,10 @@
 
     color: $primary;
     border: 2px solid $primary;
+
+    @include respond(phone) {
+      padding: 0.5rem 1.5rem;
+    }
 
     &:hover {
       background-color: $primary;
