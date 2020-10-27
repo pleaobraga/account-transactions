@@ -12,6 +12,8 @@ A aplicação é baseada em **React** e utliza as seguintes bibliotecas:
 - Babel
 - Webpack
 
+Acesse o app atravez do link https://pleaobraga.github.io/account-transactions/
+
 # Quick Start
 
 ## Instalando as dependencias
