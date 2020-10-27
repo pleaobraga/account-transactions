@@ -60,7 +60,7 @@ yarn test
 
 ### Conferindo a cobertura de Testes
 
-A cobertura de testes escrita foi de **94%**
+A cobertura de testes escrita foi de **93%**
 
 ```
 yarn test:coverage
