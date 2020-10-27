@@ -72,11 +72,11 @@ yarn storybook
 
 ## Commits
 
-Esse projeto utiliza o **Husk.js** está configurado para executar o lint e testar toda a aplicação antes do push. Caso exista algum teste quebrado ou algo fora dos padroes do lint não será possivel executar o push.
+Esse projeto utiliza o **Husk.js**, e está configurado para executar o lint e testar toda a aplicação antes do push. Caso exista algum teste quebrado ou algo fora dos padroes do lint não será possivel executar o push.
 
 ## Arquitetura do Projeto
 
-O projeto utiliza a arquitetura baseada em **Atomic Design** e também utiliza os padroes **SOLID**
+O projeto utiliza uma arquitetura baseada em **Atomic Design** e também utiliza os padroes **SOLID**
 
 Abaixo podemos ver um pouco sobre a arquitetura do projeto
 
@@ -104,9 +104,9 @@ Component
   Component.jsx
 ```
 
-Cada Componente possui seu proprio testesm stories, arquivos jsx, e um index para exportar o que for necessário
+Cada Componente possui seu proprio teste, stories, arquivo jsx, e um index para exportar o que for necessário
 
-Esta arquitetura é facil de se manter, pois esta tudo centralizado, e caso precise mudar algo o arquivo sera encontrado dentro da própria pasta do componente.
+O componente tem facil manutentabilidade devido a essa arquitetura, é facil de se manter pois esta tudo centralizado, dentro da mesma pasta, e caso precise mudar algo, é so acessar a pasta do componente e fazer a mudança no arquivo desejado.
 
 ### Helpers
 
@@ -116,7 +116,7 @@ Na pasta Helpers se encontram os arquivos de constantes e funções gerais utili
 
 Nos dias atuais precisamos pensar em performance, caso contrario a aplicação poderá não oferecer uma boa experiencia para o usuário.
 
-Existe nesse projeto um componente chamado **DynamicImport**, eçe é integrado ao webpack e ele basicamente importa dinamicamente apenas bundle que aquela página esta usando no momento, sendo assim reduzindo muitas vezes a quantidade de arquivos a serem requisitados pelo browser ao carregar uma tela.
+Existe nesse projeto um componente chamado **DynamicImport**,integrado ao webpack e ele basicamente importa dinamicamente apenas o bundle que aquela página esta usando no momento, sendo assim reduzindo muitas vezes a quantidade de arquivos a serem requisitados pelo browser ao carregar uma tela.
 
 Ele foi aplicado no arquivo **routes.js**, dessa forma cada pagina que voce importar irá criar um bundle otimizado automaticanete.
 
@@ -151,13 +151,13 @@ O webpack esta configurado para criar o arquivo de vendros com as bibliotecas co
 
 ## A solução do problema
 
-Foi criado uma aplicação baseada em React, e não foi utilizado o **create-ract-app** como sua base, mas sim um projeto chamado [**react-scaffold**](https://github.com/pleaobraga/react-scaffold) quer é de minha autoria, open-souce, onde eu configurei o projeto do zero (webpack, eslint...), para maiores detalhes acesse o link https://github.com/pleaobraga/react-scaffold
+Foi criado uma aplicação baseada em React, e não foi utilizado o **create-ract-app** como sua base, mas sim um projeto chamado [**react-scaffold**](https://github.com/pleaobraga/react-scaffold) que é de um projeto open souce de minha autoria, onde o configurei do zero (webpack, eslint...), para maiores detalhes acesse o link https://github.com/pleaobraga/react-scaffold
 
 Utilizando o **react-scaffold** como base foi-se pensado em uma forma de criar uma aplicação bonita, facil de usar. Dessa forma foi-se utilizado o **Storybook** para a criação dos components, todos feitos sem utilizar nenhum framework de CSS, tudo feito a mão e do zero. A aplicação utiliza tecnicas modernas de **CSS** como por exemplo _Flexbox_, _Sass_, e o layout é **Resposivo**
 
 Os componentes foram pensados utilizando a arquitetura **Atomic Design** e Principios **SOLID** e utilizando boas praticas de **Clean Code**
 
-Para a aplicação funcionar mesmo se o browser fechar foi utilizado o LocalStorage para armazenar localmente os dados, entre suas vantagens estam
+Para a aplicação funcionar mesmo se o browser fechar foi utilizado o LocalStorage para armazenar localmente os dados, entre suas vantagens estão
 
 - Funciona em todos os browser
 - Suas funções não são assincronas (nesse projeto foi uma vantagem)
@@ -168,13 +168,13 @@ Para não haver acoplamento entre camadas foi criado a pasta **Service** exporta
 
 Como a aplicação é pequena não houve a necesidade de ter um gerenciador de estados global como por exemplo o **Redux**, no entanto foi utilizado as **React Hooks** para criar os componentes, o **Formik** para o formulário, o **React-Router-DOM** para o gerenciamento de rotas. A aplicação foi testada utilizando o **Jest** e **Enzyme**.
 
-A aplicação doi toda desenvolvida na branch develop e após o desenvolvimento mergeada na branch master
+A aplicação foi toda desenvolvida na branch develop e após o desenvolvimento mergeada na branch master
 
 Algumas features implementadas:
 
 ### Conta por rota
 
-Cada rota aprenta uma conta difernte
+Cada rota aprenta uma conta diferente
 
 _localhost:8080/{accountId}_
 
@@ -203,4 +203,4 @@ Caso o usuario tente acessar uma rota diferente da _localhost:8080/{accountId}_ 
 - Implementar um sistema de login para separar melhor os dados de cada conta
 - Trocar o localstorage por algo mais seguro como por exemplo o **FireBase**
 - Melhorar o layout para que não seja preciso subir ao topo para criar uma nova transação
-- No formuãrio de criação de transação aplicar uma mascara ao campo de valor
+- No formulário de criação de transação aplicar uma mascara ao campo de valor
