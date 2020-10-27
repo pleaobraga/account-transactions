@@ -1,8 +1,6 @@
 export const getAccountDetails = (id) => {
   const account = window.localStorage.getItem(id)
 
-  debugger
-
   try {
     return JSON.parse(account)
   } catch {
