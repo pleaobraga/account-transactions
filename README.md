@@ -48,7 +48,9 @@ yarn build
 
 ## Testing the project
 
-Os testes automatizados foram escritos usando as bibliotecas **Jest** e **Enzyme**
+Os testes automatizados foram escritos usando as bibliotecas **Jest** e **Enzyme**.
+
+O ambiente utilizado para o desenvolvimento foi o Linux ubunto, dessa forma devido a formatação de caracteres diferentes pode ser que algum teste baseado em caracteres quebre.
 
 ### Testar todo o Projeto
 
@@ -169,7 +171,7 @@ Mesmo não sendo uma opção segura o objetivo era apenas poder salvar os dados 
 
 Para não haver acoplamento entre camadas foi criado a pasta **Service** exportando apenas as funções utilizadas para o manuseio dos dados salvos, dessa forma caso seja necessário a mudança do localstorage por uma outra forma de acessar os dados, é necessário mudar apenas a implementação no services.
 
-Como a aplicação é pequena não houve a necessidade de ter um gerenciador de estados global como por exemplo o **Redux**, no entanto foi utilizado as **React Hooks** para criar os componentes, o **Formik** para o formulário, o **React-Router-DOM** para o gerenciamento de rotas. A aplicação foi testada utilizando o **Jest** e **Enzyme**.
+Como a aplicação é pequena não houve a necessidade de ter um gerenciador de estados global como por exemplo o **Redux**, no entanto foi utilizado as **React Hooks** para criar os componentes, o **Formik** e o **Yup** para o formulário, o **React-Router-DOM** para o gerenciamento de rotas. A aplicação foi testada utilizando o **Jest** e **Enzyme**.
 
 A aplicação foi toda desenvolvida na branch develop e após o desenvolvimento margeada na branch master
 
