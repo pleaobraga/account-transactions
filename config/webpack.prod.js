@@ -10,5 +10,6 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, '../build'),
     filename: '[name].[hash:8].js',
     chunkFilename: '[name].[hash:8].chunk.js',
+    publicPath: '/account-transactions/',
   },
 })

@@ -7,7 +7,7 @@ import Loading from './components/Atom/Loading'
 const AccountPage = () => (
   <DynamicImport
     loadComponent={() =>
-      import(/*  webpackChunkName: "welcomePage" */ './pages/AccountPage')
+      import(/*  webpackChunkName: "AccountPage" */ './pages/AccountPage')
     }
     ErrorComponent={ErrorPage}
     LoadingComponent={() => <Loading />}
