@@ -1,6 +1,13 @@
 export const getAccountDetails = (id) => {
   const account = window.localStorage.getItem(id)
-  return JSON.parse(account)
+
+  debugger
+
+  try {
+    return JSON.parse(account)
+  } catch {
+    return { error: 'error' }
+  }
 }
 
 export const postAccountDetails = (id, transaction) => {
