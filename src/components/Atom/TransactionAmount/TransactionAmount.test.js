@@ -2,6 +2,10 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import TransactionAmount from './TransactionAmount'
 
+jest.mock('../../../helpers/generalHelpers', () => ({
+  formatPrice: (a) => 'R$' + a + '.00',
+}))
+
 const setup = (props = {}) => {
   const newProps = {
     amount: 100,
@@ -37,7 +41,7 @@ describe('Transaction Amount', () => {
     })
 
     it('should render negative value', () => {
-      expect(wrapper.text()).toBe('-R$100.00')
+      expect(wrapper.text()).toBe('R$-100.00')
     })
   })
 })

@@ -2,6 +2,10 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import TotalBalance from './TotalBalance'
 
+jest.mock('../../../helpers/generalHelpers', () => ({
+  formatPrice: (a) => 'R$' + a + '.00',
+}))
+
 describe('Total Balance', () => {
   const wrapper = shallow(<TotalBalance amount={100} />)
 
