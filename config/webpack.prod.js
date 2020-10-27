@@ -7,7 +7,7 @@ module.exports = merge(common, {
   devtool: 'source-map',
 
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../build'),
     filename: '[name].[hash:8].js',
     chunkFilename: '[name].[hash:8].chunk.js',
   },

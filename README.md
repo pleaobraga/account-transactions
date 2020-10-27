@@ -4,7 +4,6 @@ Este projeto é um consiste em simular transações bancárias de deposito e saq
 
 A aplicação é baseada em **React** e utliza as seguintes bibliotecas:
 
-- Redux
 - React Router Dom
 - Formik
 - Jest
