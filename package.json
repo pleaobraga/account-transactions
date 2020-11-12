@@ -28,9 +28,9 @@
     "last 4 version"
   ],
   "engines": {
-    "node": "^12.0.0",
-    "npm": "^6.0.0",
-    "yarn": "^1.22.0"
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0",
+    "yarn": ">=1.22.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.1.3",
